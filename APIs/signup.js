@@ -1,7 +1,8 @@
 let express = require('express')
 let route = express.Router()
+const UsersModel = require('../Models/Users')
 
-route.get('/',(request,response) => {
+route.post('/',(request,response) => {
     response.send('signup page')
 })
 
