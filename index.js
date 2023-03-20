@@ -1,24 +1,20 @@
 const mongoose = require('mongoose')
 const express = require('express')
-const app = express()
 const config = require('config')
+const helmet = require('helmet')
+const compression = require('compression')
+
+const signup = require('./APIs/signup')
+const login = require('./APIs/login')
+const app = express()
+
 
 app.use(express.json())
+app.use(helmet())
+app.use(compression())
+app.use('/api/signup', signup)
+app.use('/api/login',login)
 
-
-let schema = new mongoose.Schema({
-    name:String
-})
-let Model = mongoose.model('testing',schema)
-let doc = new Model({name:'Varun'})
-
-app.get('/',(request,response)=>{
-    doc.save().then(resolve=>{
-        response.send('hello world')
-    }).catch(reject=>{
-        response.send('Something Wrong')
-    })
-})
 
 
 mongoose.connect(config.get('db'))
