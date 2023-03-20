@@ -24,7 +24,7 @@ route.post('/', (request, response) => {
                 response.send(token)
             }
         })
-        .catch(reject => { response.send(reject.message) })
+        .catch(reject => { response.status(400).send('Something failed, Please try again later') })
 })
 
 module.exports = route
