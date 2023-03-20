@@ -9,12 +9,12 @@ const schema = new mongoose.Schema({
     confirmPassword: {
         type: String, required: true, minlength: 4, maxlength: 20,
         validate: {
-            validator: function (props) { 
+            validator: function (props) {
                 return (this.password == props)
-             },
+            },
             message: () => 'Password and Confirm Password does not match'
         }
     },
 })
 
-module.exports = mongoose.model('users',schema)
+module.exports = mongoose.model('users', schema)
