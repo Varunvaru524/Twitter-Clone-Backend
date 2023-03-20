@@ -10,8 +10,7 @@ const schema = new mongoose.Schema({
         type: String, required: true, minlength: 4, maxlength: 20,
         validate: {
             validator: function (props) { 
-                console.log(props);
-                return (this.password.length == props.length)
+                return (this.password == props)
              },
             message: () => 'Password and Confirm Password does not match'
         }

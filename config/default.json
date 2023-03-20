@@ -1,4 +1,5 @@
 {
     "db":null,
-    "port":null
+    "port":null,
+    "jwt":null
 }
