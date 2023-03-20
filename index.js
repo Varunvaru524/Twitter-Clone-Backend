@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const express = require('express')
 const config = require('config')
 const helmet = require('helmet')
+const cors = require('cors')
 const compression = require('compression')
 
 const signup = require('./APIs/signup')
@@ -12,9 +13,9 @@ const app = express()
 app.use(express.json())
 app.use(helmet())
 app.use(compression())
+app.use(cors())
 app.use('/api/signup', signup)
 app.use('/api/login',login)
-
 
 
 mongoose.connect(config.get('db'))

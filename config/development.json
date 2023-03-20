@@ -1,5 +1,5 @@
 {
     "db":"mongodb://127.0.0.1:27017/twitter",
-    "port":"3000",
+    "port":"3900",
     "jwt":"jwtToken"
 }
