@@ -10,7 +10,7 @@ route.post('/', (request, response) => {
     UserModel.find({ email, password })
         .then(resolve => {
             if (resolve.length == 0) {
-                response.send('Invalid Email or Password')
+                response.status(404).send('Invalid Email or Password')
             }
             else{
                 // Sending JWT Token
