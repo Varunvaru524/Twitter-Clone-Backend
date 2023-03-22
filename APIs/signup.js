@@ -18,7 +18,11 @@ route.post('/', (request, response) => {
             let token = jwt.sign(payload, config.get('jwt'))
             response.send(token)
         })
-        .catch(reject => { response.status(400).send('Something failed, Please try again later') })
+        .catch(reject => { 
+            (reject.code)
+            ? response.status(400).send('User already registered')
+            : response.status(400).send('Something failed, Please try again later')
+         })
 })
 
 module.exports = route
