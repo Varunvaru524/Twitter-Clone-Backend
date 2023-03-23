@@ -33,4 +33,4 @@ mongoose.connect(config.get('db'))
 .catch(reject=>console.log(`Failed to connect to ${config.get('db')}`))
 
 // To Server
-module.exports = app.listen(config.get('port'), ()=>console.log(`Listning in port 3000...`))
+module.exports = app.listen(config.get('port'), ()=>console.log(`Listning in port 3900...`))

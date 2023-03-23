@@ -18,8 +18,8 @@ describe('Login Api',()=>{
         }).save()
     })
     afterEach(async ()=>{
-        await server.close()
         await UserModel.deleteMany({})
+        await server.close()
     })
 
     it('Should return a valid jwt token if the user exists',async ()=>{
