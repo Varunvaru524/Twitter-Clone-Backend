@@ -29,8 +29,8 @@ app.use('/api/login',login)
 
 // To Database
 mongoose.connect(config.get('db'))
-.then(resolve=>console.log('Successfully Connected to Database'))
-.catch(reject=>console.log('Failed to connect to Database'))
+.then(resolve=>console.log(`Successfully Connected to ${config.get('db')}`))
+.catch(reject=>console.log(`Failed to connect to ${config.get('db')}`))
 
 // To Server
 module.exports = app.listen(config.get('port'), ()=>console.log(`Listning in port 3000...`))
